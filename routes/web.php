@@ -18,6 +18,5 @@ Route::get('/', [EmployeeController::class, 'index'])->name('index');
 Route::post('/', [EmployeeController::class, 'create'])->name('create');
 Route::get('/edit/{id}', [EmployeeController::class, 'edit'])->name('edit');
 Route::put('/edit/{id}', [EmployeeController::class, 'update'])->name('update');
-
-
+Route::get('/delete/{id}', [EmployeeController::class, 'destroy'])->name('destroy');
 

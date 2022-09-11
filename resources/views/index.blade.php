@@ -56,15 +56,18 @@
                 </tr>
               </thead>
               <tbody>
+                <?php
+                $count = 1;
+                ?>
                 @foreach ($employees as $emp)
                 <tr>
-                  <td>{{ $emp->id }}</td>
+                  <td>{{ $count++ }}</td>
                   <td>{{ $emp->name }}</td>
                   <td>{{ $emp->email }}</td>
                   <td>{{ $emp->phone }}</td>
                   <td>
                     <a href="{{ url('/edit', $emp->id) }}" class="btn btn-info btn-sm">Edit</a>
-                    <a href="{{ url('/edit', $emp->id) }}" class="btn btn-danger btn-sm">Delete</a>
+                    <a href="{{ url('/delete', $emp->id) }}" class="btn btn-danger btn-sm">Delete</a>
                   </td>
                 </tr>
                 @endforeach
