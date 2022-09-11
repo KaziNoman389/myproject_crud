@@ -31,7 +31,7 @@ class EmployeeController extends Controller
         $employee->email = $request->email;
         $employee->phone = $request->phone;
         $employee->save();
-        return redirect(route('index'));
+        return redirect(route('index'))->with('status', 'Employee Added');
     }
 
     /**
@@ -61,7 +61,7 @@ class EmployeeController extends Controller
         $employee->email = $request->edit_email;
         $employee->phone = $request->edit_phone;
         $employee->save();
-        return redirect(route('index'));
+        return redirect(route('index'))->with('status', 'Employee Updated');
     }  
 
     /**
@@ -73,6 +73,6 @@ class EmployeeController extends Controller
     public function destroy($id)
     {
         Employee::destroy($id);
-        return redirect(route('index'));
+        return redirect(route('index'))->with('status', 'Employee Deleted');
     }
 }

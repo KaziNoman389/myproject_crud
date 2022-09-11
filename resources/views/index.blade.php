@@ -17,6 +17,12 @@
     <h1 class="text-center">Employee Imformation</h1>
     <hr>
 
+    @if (session()->has('status'))
+        <div class="alert alert-success">
+        {{ session('status') }}
+        </div>
+    @endif
+
     <div class="container-fluid mt-5">
       <div class="row">
         
